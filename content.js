@@ -1,11 +1,13 @@
 // ==============================================================
-// Cyble Service Group Selector — content.js  v1.3
+// Cyble Service Group Selector — content.js  v1.4
 // 分群依照 Help Center > Alerts Management 實際分類
+// v1.4 更新：Physical Threats 新增 Locations；
+//           Threat Intelligence 新增 BotShield、OT/ICS Intelligence；
+//           新增 Cloud Security 獨立分群（Security Posture、Inventory）
 // ==============================================================
 
 // ── 分群定義（對應 Help Center 截圖） ─────────────────────────
 const SERVICE_GROUPS = {
-  // 截圖 1
   'Darkweb Intelligence': [
     'Data Exposures',
     'Leaked Credentials',
@@ -17,14 +19,12 @@ const SERVICE_GROUPS = {
     'I2P Links',
     'Tor Links',
   ],
-  // 截圖 10
   'Cybercrime Monitoring': [
     'Cybercrime Forum Mentions',
     'Darkweb Marketplaces',
     'Telegram Mentions',
     'Discord',
   ],
-  // 截圖 8
   'Attack Surface Monitoring': [
     'Web Application Discovery',
     'Issues Catalog',
@@ -35,7 +35,6 @@ const SERVICE_GROUPS = {
     'IP Risk Score',
     'Subdomains',
   ],
-  // 截圖 5
   'Brand Intelligence': [
     'Mobile Apps',
     'OSINT',
@@ -48,7 +47,6 @@ const SERVICE_GROUPS = {
     'Defacement Content',
     'Defacement Keyword',
   ],
-  // 截圖 7
   'Data Leaks': [
     'Cloud Storage',
     'Code Analysis - Github',
@@ -57,32 +55,38 @@ const SERVICE_GROUPS = {
     'Code Analysis - Docker Hub',
     'Pastesite',
   ],
-  // 截圖 4
+  // v1.4：新增 BotShield、OT/ICS Intelligence
   'Threat Intelligence': [
     'IoCs',
+    'BotShield',
+    'OT/ICS Intelligence',
     'Hacktivism',
     'Ransomware Incidents',
   ],
-  // 截圖 6
   'Vulnerability Intelligence': [
     'Vulnerability Intelligence',
   ],
-  // 截圖 2
   'Reporting': [
     'Cyble Research Labs Advisory',
     'Cyble Research Labs',
     'News Flash',
     'Cyber Newsfeed',
   ],
-  // 截圖 3 + 9
-  'Executive Monitoring': [
+  // v1.4：改名為 Physical Threats，新增 Locations
+  'Physical Threats': [
     'Executive Monitoring',
+    'Locations',
+  ],
+  // v1.4：Cloud Security 獨立成分群
+  'Cloud Security': [
+    'Cloud Security',
+    'Security Posture',
+    'Inventory',
   ],
   // Help Center 未列出的其他服務
   'Other': [
     'Application Scan',
     'Blaze Alerts',
-    'Cloud Security',
     'DNS Monitoring',
     'Domain Analysis',
     'Incident Management',
@@ -112,7 +116,8 @@ const GROUP_COLORS = {
   'Threat Intelligence':       { bg: '#B45309', light: '#FFFBEB', text: '#B45309' },
   'Vulnerability Intelligence':{ bg: '#C2410C', light: '#FFF7ED', text: '#C2410C' },
   'Reporting':                 { bg: '#047857', light: '#ECFDF5', text: '#047857' },
-  'Executive Monitoring':      { bg: '#BE185D', light: '#FDF2F8', text: '#BE185D' },
+  'Physical Threats':          { bg: '#BE185D', light: '#FDF2F8', text: '#BE185D' },
+  'Cloud Security':            { bg: '#0891B2', light: '#ECFEFF', text: '#0891B2' },
   'Other':                     { bg: '#374151', light: '#F9FAFB', text: '#374151' },
 };
 
